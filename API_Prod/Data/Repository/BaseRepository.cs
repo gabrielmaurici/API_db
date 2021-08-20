@@ -23,7 +23,7 @@ namespace Data.Repository
             List<T> lista = new List<T>();
             using (var context = new ProdutoContext())
             {
-                context.Set<T>().ToList<T>();
+                lista = context.Set<T>().ToList<T>();
             }
             return lista;
         }
@@ -49,6 +49,7 @@ namespace Data.Repository
             using (var context = new ProdutoContext())
             {
                 context.Entry<T>(Read(id)).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
             }
         }
     }

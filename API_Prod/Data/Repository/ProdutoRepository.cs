@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository
 {
-    class ProdutoRepository : BaseRepository<Produto>
+    public class ProdutoRepository : BaseRepository<Produto>
     {
     }
 }
