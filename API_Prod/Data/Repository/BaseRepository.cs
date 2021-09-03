@@ -40,7 +40,7 @@ namespace Data.Repository
         {
             using (var context = new ProdutoContext())
             {
-                context.Entry<T>(model).State = System.Data.Entity.EntityState.Modified;
+                context.Entry<T>(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
             }
         }
@@ -48,7 +48,7 @@ namespace Data.Repository
         {
             using (var context = new ProdutoContext())
             {
-                context.Entry<T>(Read(id)).State = System.Data.Entity.EntityState.Deleted;
+                context.Entry<T>(Read(id)).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
                 context.SaveChanges();
             }
         }
